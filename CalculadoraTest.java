@@ -6,6 +6,12 @@ import org.junit.jupiter.api.Test;
 class CalculadoraTest {
 	
 	 Calculadora cal;
+	 
+	/*
+	 * 	https://howtodoinjava.com/junit-5-tutorial/
+	 *  https:junit.org/junit5/docs/current/user-guide/
+	 * 
+	 */
 
 	
 	
@@ -26,12 +32,14 @@ class CalculadoraTest {
 	void testmultplicacao() {
 		assertEquals(27, cal.multiplicar(3, 9));
 	}
-	/*falta ver como rodar com exection
-	@Test (expected= DivisaoPor0Exception.class)
-	void testdivisao() throws  DivisaoPor0Exception{
-		cal.divisao(6, 0);
+	
+	@Test
+	void testdivisao() { 
+		
+		Exception exe = assertThrows(DivisaoPor0Exception.class, () -> cal.divisao(6, 0));
+		assertEquals("divisao por 0", exe.getMessage());
 		
 	}
-	*/
+	
 
 }
