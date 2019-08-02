@@ -20,13 +20,15 @@ class LojaTest {
 	void testvendaErro() {
 		Exception vendaEx = assertThrows(ValorInvalidoExecption.class, () -> loja.vender(0));
 		assertEquals("valor a ser creditado é invalido" , vendaEx.getMessage());
+		//System.out.println(loja.mostarSaldo());
 		
 		
 	}
 	
 	@Test
 	void testvenda() throws ValorInvalidoExecption {
-		assertEquals("venda efetuada com sucesso", loja.vender(120));
+		assertEquals("venda efetuada com sucesso", loja.vender(10));
+		System.out.println("saldo apos a venda : " + loja.mostarSaldo());
 		
 	}
 	
@@ -34,12 +36,13 @@ class LojaTest {
 	void compraErro() {
 		Exception compraEX = assertThrows(CreditoInsuficienteException.class, () -> loja.comprar(200));
 		assertEquals("Nao possui credito a ser debitado", compraEX.getMessage());
+		//System.out.println(loja.mostarSaldo());
 	}
 	
 	@Test
-	void testcompra() throws ValorInvalidoExecption {
-		assertEquals("venda efetuada com sucesso", loja.vender(120));
-		
+	void testcompra() throws CreditoInsuficienteException {
+		assertEquals("compra efetuada com sucesso", loja.comprar(20));
+		System.out.println("saldo apos a compra : " + loja.mostarSaldo());
 	}
 
 }
