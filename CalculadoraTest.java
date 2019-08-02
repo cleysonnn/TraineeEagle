@@ -41,5 +41,11 @@ class CalculadoraTest {
 		
 	}
 	
+	@Test
+	void testRaiz() {
+		assertEquals(11, cal.raiz(121));
+		
+	}
+	
 
 }

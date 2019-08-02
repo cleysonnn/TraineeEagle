@@ -2,18 +2,18 @@
 public class Calculadora {
 	
 	
-	public int soma(int a , int b) {
+	public double soma(double a , double b) {
 		return a+b;
 	}
 	
-	public int subtrair(int a , int b) {
+	public double subtrair(double a , double b) {
 		return a-b;
 	}
-	public int multiplicar(int a , int b) {
+	public double multiplicar(double a , double b) {
 		return a*b;
 	}
 	
-	public int divisao(int a , int b) throws DivisaoPor0Exception {
+	public double divisao(double a , double b) throws DivisaoPor0Exception {
 		if (b == 0){
 			throw new DivisaoPor0Exception ("divisao por 0") ;
 	
@@ -21,8 +21,8 @@ public class Calculadora {
 		
 		return a/b;
 	}
-	public int raiz(int a , int b) {
-		return a+b;
+	public double raiz(double a ) {
+		return Math.sqrt(a);
 	}
 	
 }
